@@ -1,13 +1,13 @@
 [package]
-name = "rust"
+name = "arduino"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
 
-[build]
-target = "avr-none"
-rustflags = ["-C", "target-cpu=atmega328p"]
+[profile.release]
+panic = "abort"
+opt-level = "s"
 
-[unstable]
-build-std = ["core"]
+[profile.dev]
+panic = "abort"
