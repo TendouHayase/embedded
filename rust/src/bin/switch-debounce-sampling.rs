@@ -55,7 +55,7 @@ fn disable_timer() {
     let timsk1 = 0x6F as *mut u8;
     let tifr1 = 0x36 as *mut u8;
     unsafe {
-        write_volatile(timsk1, read_volatile(timsk1) & !OCIEA_MASK);
+        write_volatile(timsk1, read_volatile(timsk1) & !OCFA_MASK);
         write_volatile(tifr1, OCIEA_MASK);
     }
 }
@@ -122,7 +122,7 @@ fn gpio_init() {
 }
 
 #[unsafe(export_name = "main")]
-pub fn main() -> ! {
+pub extern "C" fn main() -> ! {
     gpio_init();
     counter_init();
     interrupt_init();
