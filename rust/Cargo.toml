@@ -1,5 +1,5 @@
 [package]
-name = "arduino"
+name = "avr-bare-metal"
 version = "0.1.0"
 edition = "2024"
 
@@ -11,3 +11,7 @@ opt-level = "s"
 
 [profile.dev]
 panic = "abort"
+
+[lib]
+test = false
+bench = false
