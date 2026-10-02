@@ -30,5 +30,5 @@ if not exist "%ELF%" (
     exit /b 1
 )
 
-avr-objdump -d "%ELF%" > "%LST%" || exit /b 1
+avr-objdump -D -S "%ELF%" > "%LST%" || exit /b 1
 echo Disassembly written to %LST%
