@@ -14,7 +14,7 @@ set "PROFILE=%~2"
 if "%PROFILE%"=="" set "PROFILE=release"
 
 if /i "%PROFILE%"=="release" (
-    cargo build --release --bin "%BIN%" || exit /b 1
+    cargo rustc --release --bin "%BIN%" || exit /b 1
 ) else if /i "%PROFILE%"=="debug" (
     cargo build --bin "%BIN%" || exit /b 1
 ) else (
