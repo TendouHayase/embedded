@@ -3,13 +3,15 @@ name = "avr-bare-metal"
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[dev-dependencies]
 avr-device = { version = "0.8.1", features = ["atmega328p"] }
 embassy-executor = { version = "0.10.0", features = ["platform-avr", "executor-thread"] }
 
 [profile.release]
 panic = "abort"
 opt-level = "s"
+lto = true
+
 
 [profile.dev]
 panic = "abort"

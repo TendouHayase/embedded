@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set PORT=COM3
+set PORT=COM6
 
 if "%~1"=="" (
     echo usage: %~nx0 ^<file.elf^>
