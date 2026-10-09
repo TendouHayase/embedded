@@ -5,7 +5,7 @@ use core::ptr::{read_volatile, write_volatile};
 
 use avr_bare_metal::{
     self as _,
-    sync::{Delay, run, spawn},
+    sync_by_ai::{Delay, run, spawn},
 };
 
 const COUNTER_OFF_MASK: u8 = 0b0001000;
